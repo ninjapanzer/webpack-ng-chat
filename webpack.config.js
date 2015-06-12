@@ -11,6 +11,7 @@ webpackConfig = {
   externals: ['angular', 'jQuery', '$'],
   module: {
     loaders: [
+      { test: /\.html$/, loader: "ng-cache?prefix=[dir]/[dir]" },
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /\.scss$/, loader: "style!css!sass" },
       { test: /\.png$/, loader: "url-loader?limit=100000" }
