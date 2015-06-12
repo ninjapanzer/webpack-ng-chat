@@ -1,10 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
 var SaveAssetsJson = require('assets-webpack-plugin');
-var bower_dir = __dirname + '/bower_components';
-var resolveBowerPath = function(componentPath) {
-    return path.join(bower_dir, componentPath);
-};
 webpackConfig = {
   entry: './app/app.coffee',
   devtool: "source-map",
@@ -33,6 +29,4 @@ if(process.env.WEBPACK !== undefined){
   webpackConfig.output.path = './build';
   webpackConfig.output.filename = 'chat.min.js';
 }
-function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
-function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
 module.exports = webpackConfig;
