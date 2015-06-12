@@ -10,10 +10,13 @@
   <script src="./components/angular-sanitize/angular-sanitize.js"></script>
   <script src="./components/angular-touch/angular-touch.js"></script>
 </head>
-<body>
-  <header></header>
-  <chat/>
-  <footer></footer>
+<body ng-app="ngChatApp">
+  <ul>
+    <li><a href="#/">Start</a></li>
+    <li><a href="#/manage">Home (embedded and external images)</a></li>
+  </ul>
+
+  <ng-view></ng-view>
   <script src='chat.min.js'></script>
 </body>
 </html>

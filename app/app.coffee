@@ -1,18 +1,16 @@
-'use strict'
+'use strict';
 
-require './controllers/interaction_ctrl'
-require './controllers/manage_ctrl'
-
-angular.module('ngChatApp', [
+app = angular.module('ngChatApp', [
   'ngAnimate'
   'ngCookies'
   'ngResource'
   'ngRoute'
   'ngSanitize'
   'ngTouch'
-]).config ($routeProvider) ->
-  $routeProvider.when('/',
-    templateUrl: 'views/interaction.html'
-    controller: 'InteractionCtrl').when('/manage',
-    templateUrl: 'views/manage.html'
-    controller: 'ManageCtrl').otherwise redirectTo: '/'
+]);
+
+app.config require('./app/app_register')
+app.config require('./app/app_router')
+
+module.exports = app;
+global.window.ngChatApp = app;
