@@ -1,8 +1,7 @@
 'use strict'
 
 scope = require '../resources/message_resources'
-
-angular.module('ngChatApp')
-  .controller 'ManageCtrl', ["$scope", ($scope)->
+module.exports = angular.module('ngChatApp')
+  .controller 'ManageController', ["$scope", ($scope)->
     $scope.users = scope().users
   ]

@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('ngChatApp')
-  .controller 'InteractionCtrl', ["$scope", ($scope)->
+module.exports = angular.module('ngChatApp')
+  .controller 'InteractionController', ["$scope", ($scope)->
     $scope.awesomeThings = []
   ]
